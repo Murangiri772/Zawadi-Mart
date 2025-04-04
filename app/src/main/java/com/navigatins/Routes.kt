@@ -1,4 +1,6 @@
 package com.navigatins
 
-class Routes {
-}
+const val ROUT_HOME = "home"
+const val ROUT_ABOUT = "about"
+const val ROUT_START = "start"
+const val ROUT_ITEM = "item"

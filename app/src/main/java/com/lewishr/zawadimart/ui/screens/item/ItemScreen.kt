@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
@@ -46,13 +47,17 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.lewishr.zawadimart.R
 import com.lewishr.zawadimart.ui.theme.neworange
 import com.lewishr.zawadimart.ui.theme.newwhite
+import com.navigatins.ROUT_HOME
+import com.navigatins.ROUT_START
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ItemScreen() {
+fun ItemScreen(navcontroller = NavController) {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -100,248 +105,31 @@ fun ItemScreen() {
             value = search,
             onValueChange = { search = it },
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "")},
+            leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "") },
             placeholder = { Text("search here......") }
         )
 
 
-
         //End Of SearchBar
         Spacer(modifier = Modifier.height(10.dp))
-        //Row
-        Row {
-            Image(
-                painter = painterResource(R.drawable.og),
-                contentDescription = "bag",
-                alignment = Alignment.Center,
-                modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(20.dp)),
-                contentScale = ContentScale.FillWidth
-            )
-            Spacer(modifier = Modifier.height(10.dp))
-            Column {
-                Text(
-                    text = "Men's Outfit",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold,
 
 
-                    )
-                Text(
-                    text = "Ksh.6000",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold,
-                    textDecoration = TextDecoration.LineThrough
 
-
-                )
-                Text(
-                    text = "Price:500",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold,
-
-
-                    )
-
-                Row {
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = neworange
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = neworange
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = neworange
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = neworange
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = neworange
-                    )
-                }
-                Button(
-                    onClick = {},
-                    colors = ButtonDefaults.buttonColors(Color.DarkGray),
-                    shape = RoundedCornerShape(size = 10.dp)
-                ) {
-                    Text(
-                        text = "Contact Us",
-                        color = Color.Green
-                    )
-                }
-            }
-        }
-        //End of Row
-            Row {
-                Image(
-                    painter = painterResource(R.drawable.og),
-                    contentDescription = "bag",
-                    alignment = Alignment.Center,
-                    modifier = Modifier.width(200.dp).height(150.dp)
-                        .clip(shape = RoundedCornerShape(20.dp)),
-                    contentScale = ContentScale.FillWidth
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Column {
-                    Text(
-                        text = "Men's Outfit",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-
-
-                        )
-                    Text(
-                        text = "Ksh.6000",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        textDecoration = TextDecoration.LineThrough
-
-
-                    )
-                    Text(
-                        text = "Price:500",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-
-
-                        )
-
-                    Row {
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "",
-                            tint = neworange
-                        )
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "",
-                            tint = neworange
-                        )
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "",
-                            tint = neworange
-                        )
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "",
-                            tint = neworange
-                        )
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "",
-                            tint = neworange
-                        )
-                    }
-                    Button(
-                        onClick = {},
-                        colors = ButtonDefaults.buttonColors(Color.DarkGray),
-                        shape = RoundedCornerShape(size = 10.dp)
-                    ) {
-                        Text(
-                            text = "Contact Us",
-                            color = Color.Green
-                        )
-                    }
-                }
-                Row {
-                    Image(
-                        painter = painterResource(R.drawable.og),
-                        contentDescription = "bag",
-                        alignment = Alignment.Center,
-                        modifier = Modifier.width(200.dp).height(150.dp)
-                            .clip(shape = RoundedCornerShape(20.dp)),
-                        contentScale = ContentScale.FillWidth
-                    )
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Column {
-                        Text(
-                            text = "Men's Outfit",
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold,
-
-
-                            )
-                        Text(
-                            text = "Ksh.6000",
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold,
-                            textDecoration = TextDecoration.LineThrough
-
-
-                        )
-                        Text(
-                            text = "Price:500",
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold,
-
-
-                            )
-
-                        Row {
-                            Icon(
-                                imageVector = Icons.Default.Star,
-                                contentDescription = "",
-                                tint = neworange
-                            )
-                            Icon(
-                                imageVector = Icons.Default.Star,
-                                contentDescription = "",
-                                tint = neworange
-                            )
-                            Icon(
-                                imageVector = Icons.Default.Star,
-                                contentDescription = "",
-                                tint = neworange
-                            )
-                            Icon(
-                                imageVector = Icons.Default.Star,
-                                contentDescription = "",
-                                tint = neworange
-                            )
-                            Icon(
-                                imageVector = Icons.Default.Star,
-                                contentDescription = "",
-                                tint = neworange
-                            )
-                        }
-                        Button(
-                            onClick = {},
-                            colors = ButtonDefaults.buttonColors(Color.DarkGray),
-                            shape = RoundedCornerShape(size = 10.dp)
-                        ) {
-                            Text(
-                                text = "Contact Us",
-                                color = Color.Green
-                            )
-                        }
-                    }
-                }
-            }
-
+    }
+}
 
 
 
             
 
-        }
-    }
-}
+
+
+
 
 @Preview(showBackground = true )
 @Composable
 fun ItemScreenPreview(){
-    ItemScreen()
+    ItemScreen(rememberNavController())
 }
 
 
