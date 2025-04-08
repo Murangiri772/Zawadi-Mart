@@ -7,7 +7,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.lewishr.zawadimart.ui.screens.about.AboutScreen
+import com.lewishr.zawadimart.ui.screens.dashboard.DashBoardScreen
 import com.lewishr.zawadimart.ui.screens.home.HomeScreen
+import com.lewishr.zawadimart.ui.screens.intents.IntentsScreen
 import com.lewishr.zawadimart.ui.screens.item.ItemScreen
 import com.lewishr.zawadimart.ui.screens.start.StartScreen
 
@@ -39,6 +41,15 @@ fun AppNavHost(
             ItemScreen(navController)
 
         }
+        composable(ROUT_INTENTS) {
+            IntentsScreen(navController)
+
+        }
+        composable(ROUT_DASHBOARD) {
+            DashBoardScreen(navController)
+
+        }
+
 
     }
 

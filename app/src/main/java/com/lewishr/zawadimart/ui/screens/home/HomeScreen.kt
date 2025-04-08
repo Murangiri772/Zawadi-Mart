@@ -28,7 +28,7 @@ import com.lewishr.zawadimart.R
 import com.navigatins.ROUT_START
 
 @Composable
-fun HomeScreen(naveController: NavController){
+fun HomeScreen(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -60,7 +60,7 @@ fun HomeScreen(naveController: NavController){
 
         Button(
             onClick = {
-                naveController.navigate(ROUT_START)
+                navController.navigate(ROUT_START)
                       },
             colors = ButtonDefaults.buttonColors(Color.Green),
 
