@@ -10,8 +10,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
@@ -120,224 +122,524 @@ fun ItemScreen(navController: NavController) {
 
         //End Of SearchBar
         Spacer(modifier = Modifier.height(10.dp))
-        Spacer(modifier = Modifier.height(10.dp))
-        //Row
-        Row(
-            modifier = Modifier.padding(start = 20.dp)
-        ) {
 
-            Image(
-                painter = painterResource(R.drawable.leo),
-                contentDescription = "home",
-                modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.FillWidth
-            )
-            Spacer(modifier = Modifier.width(20.dp))
+       Column (
+           modifier = Modifier.verticalScroll(rememberScrollState())
+       ){
+           //Row
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
 
-            Column {
-                Text(
-                    text = "Men's T-Shirt",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.ExtraBold
+               Image(
+                   painter = painterResource(R.drawable.leo),
+                   contentDescription = "home",
+                   modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                   contentScale = ContentScale.FillWidth
+               )
+               Spacer(modifier = Modifier.width(20.dp))
 
-
-
-                )
-                Text(
-                    text = "Casual Wear",
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.ExtraBold
-
-                )
-                Text(
-                    text = "Ksh.2000",
-                    fontSize = 15.sp,
-                    textDecoration = TextDecoration.LineThrough
-
-                )
-                Text(
-                    text = "Price : Ksh.1900",
-                    fontSize = 15.sp,
-
-
-                    )
-                Row {
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
-                }
-                Button(
-                    onClick = {
-                        val callIntent= Intent(Intent.ACTION_DIAL)
-                        callIntent.data="tel:0716959730".toUri()
-                        mContext.startActivity(callIntent)
-                    },
-                    colors = ButtonDefaults.buttonColors(Color.DarkGray),
-                    shape = RoundedCornerShape(size = 10.dp)
-                ) {
-                    Text(
-                        text = "Contact Us",
-                        color = Color.Green
-                    )
-                }
+               Column {
+                   Text(
+                       text = "Men's T-Shirt",
+                       fontSize = 20.sp,
+                       fontWeight = FontWeight.ExtraBold
 
 
 
+                   )
+                   Text(
+                       text = "Casual Wear",
+                       fontSize = 15.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+                   )
+                   Text(
+                       text = "Ksh.2000",
+                       fontSize = 15.sp,
+                       textDecoration = TextDecoration.LineThrough
+
+                   )
+                   Text(
+                       text = "Price : Ksh.1900",
+                       fontSize = 15.sp,
 
 
-            }
-
-
-        }
-        //End of row
-        Spacer(modifier = Modifier.height(10.dp))
-        //Row
-        Row(
-            modifier = Modifier.padding(start = 20.dp)
-        ) {
-
-            Image(
-                painter = painterResource(R.drawable.ll),
-                contentDescription = "home",
-                modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.FillWidth
-            )
-            Spacer(modifier = Modifier.width(20.dp))
-
-            Column {
-                Text(
-                    text = "Men's T-Shirt",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.ExtraBold
-
-
-
-                )
-                Text(
-                    text = "Casual Wear",
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.ExtraBold
-
-                )
-                Text(
-                    text = "Ksh.2000",
-                    fontSize = 15.sp,
-                    textDecoration = TextDecoration.LineThrough
-
-                )
-                Text(
-                    text = "Price : Ksh.1900",
-                    fontSize = 15.sp,
-
-
-                    )
-                Row {
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
-                }
-                Button(
-                    onClick = {
-                        val callIntent= Intent(Intent.ACTION_DIAL)
-                        callIntent.data="tel:0716959730".toUri()
-                        mContext.startActivity(callIntent)
-                    },
-                    colors = ButtonDefaults.buttonColors(Color.DarkGray),
-                    shape = RoundedCornerShape(size = 10.dp)
-                ) {
-                    Text(
-                        text = "Contact Us",
-                        color = Color.Green
-                    )
-                }
+                       )
+                   Row {
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                   }
+                   Button(
+                       onClick = {
+                           val callIntent= Intent(Intent.ACTION_DIAL)
+                           callIntent.data="tel:0716959730".toUri()
+                           mContext.startActivity(callIntent)
+                       },
+                       colors = ButtonDefaults.buttonColors(Color.DarkGray),
+                       shape = RoundedCornerShape(size = 10.dp)
+                   ) {
+                       Text(
+                           text = "Contact Us",
+                           color = Color.Green
+                       )
+                   }
 
 
 
 
 
-            }
+               }
 
 
-        }
-        //End of row
-        Spacer(modifier = Modifier.height(10.dp))
-        //Row
-        Row(
-            modifier = Modifier.padding(start = 20.dp)
-        ) {
+           }
+           //End of row
+           Spacer(modifier = Modifier.height(10.dp))
+           //Row
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
 
-            Image(
-                painter = painterResource(R.drawable.lw),
-                contentDescription = "home",
-                modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.FillWidth
-            )
-            Spacer(modifier = Modifier.width(20.dp))
+               Image(
+                   painter = painterResource(R.drawable.ll),
+                   contentDescription = "home",
+                   modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                   contentScale = ContentScale.FillWidth
+               )
+               Spacer(modifier = Modifier.width(20.dp))
 
-            Column {
-                Text(
-                    text = "Men's T-Shirt",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.ExtraBold
-
-
-
-                )
-                Text(
-                    text = "Casual Wear",
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.ExtraBold
-
-                )
-                Text(
-                    text = "Ksh.2000",
-                    fontSize = 15.sp,
-                    textDecoration = TextDecoration.LineThrough
-
-                )
-                Text(
-                    text = "Price : Ksh.1900",
-                    fontSize = 15.sp,
-
-
-                    )
-                Row {
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =Color.Magenta)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
-                }
-                Button(
-                    onClick = {
-                        val callIntent= Intent(Intent.ACTION_DIAL)
-                        callIntent.data="tel:0716959730".toUri()
-
-                        mContext.startActivity(callIntent)
-                    },
-                    colors = ButtonDefaults.buttonColors(Color.DarkGray),
-                    shape = RoundedCornerShape(size = 10.dp)
-                ) {
-                    Text(
-                        text = "Contact Us",
-                        color = Color.Green
-                    )
-                }
+               Column {
+                   Text(
+                       text = "Men's T-Shirt",
+                       fontSize = 20.sp,
+                       fontWeight = FontWeight.ExtraBold
 
 
 
+                   )
+                   Text(
+                       text = "Casual Wear",
+                       fontSize = 15.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+                   )
+                   Text(
+                       text = "Ksh.2000",
+                       fontSize = 15.sp,
+                       textDecoration = TextDecoration.LineThrough
+
+                   )
+                   Text(
+                       text = "Price : Ksh.1900",
+                       fontSize = 15.sp,
 
 
-            }
+                       )
+                   Row {
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                   }
+                   Button(
+                       onClick = {
+                           val callIntent= Intent(Intent.ACTION_DIAL)
+                           callIntent.data="tel:0716959730".toUri()
+                           mContext.startActivity(callIntent)
+                       },
+                       colors = ButtonDefaults.buttonColors(Color.DarkGray),
+                       shape = RoundedCornerShape(size = 10.dp)
+                   ) {
+                       Text(
+                           text = "Contact Us",
+                           color = Color.Green
+                       )
+                   }
 
 
-        }
-        //End of row
 
+
+
+               }
+
+
+           }
+           //End of row
+           Spacer(modifier = Modifier.height(10.dp))
+           //Row
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
+
+               Image(
+                   painter = painterResource(R.drawable.lw),
+                   contentDescription = "home",
+                   modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                   contentScale = ContentScale.FillWidth
+               )
+               Spacer(modifier = Modifier.width(20.dp))
+
+               Column {
+                   Text(
+                       text = "Men's T-Shirt",
+                       fontSize = 20.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+
+
+                   )
+                   Text(
+                       text = "Casual Wear",
+                       fontSize = 15.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+                   )
+                   Text(
+                       text = "Ksh.2000",
+                       fontSize = 15.sp,
+                       textDecoration = TextDecoration.LineThrough
+
+                   )
+                   Text(
+                       text = "Price : Ksh.1900",
+                       fontSize = 15.sp,
+
+
+                       )
+                   Row {
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                   }
+                   Button(
+                       onClick = {
+                           val callIntent= Intent(Intent.ACTION_DIAL)
+                           callIntent.data="tel:0716959730".toUri()
+
+                           mContext.startActivity(callIntent)
+                       },
+                       colors = ButtonDefaults.buttonColors(Color.DarkGray),
+                       shape = RoundedCornerShape(size = 10.dp)
+                   ) {
+                       Text(
+                           text = "Contact Us",
+                           color = Color.Green
+                       )
+                   }
+
+
+
+
+
+               }
+
+
+           }
+           //End of row
+           Spacer(modifier = Modifier.height(10.dp))
+           //Row
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
+
+               Image(
+                   painter = painterResource(R.drawable.nv),
+                   contentDescription = "home",
+                   modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                   contentScale = ContentScale.FillWidth
+               )
+               Spacer(modifier = Modifier.width(20.dp))
+
+               Column {
+                   Text(
+                       text = "Men's Jacket",
+                       fontSize = 20.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+
+
+                   )
+                   Text(
+                       text = "Casual Wear",
+                       fontSize = 15.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+                   )
+                   Text(
+                       text = "Ksh.4500",
+                       fontSize = 15.sp,
+                       textDecoration = TextDecoration.LineThrough
+
+                   )
+                   Text(
+                       text = "Price : Ksh.2500",
+                       fontSize = 15.sp,
+
+
+                       )
+                   Row {
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                   }
+                   Button(
+                       onClick = {
+                           val callIntent= Intent(Intent.ACTION_DIAL)
+                           callIntent.data="tel:0716959730".toUri()
+
+                           mContext.startActivity(callIntent)
+                       },
+                       colors = ButtonDefaults.buttonColors(Color.DarkGray),
+                       shape = RoundedCornerShape(size = 10.dp)
+                   ) {
+                       Text(
+                           text = "Contact Us",
+                           color = Color.Green
+                       )
+                   }
+
+
+
+
+
+               }
+
+
+           }
+           //End of row
+           Spacer(modifier = Modifier.height(10.dp))
+           //Row
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
+
+               Image(
+                   painter = painterResource(R.drawable.og),
+                   contentDescription = "home",
+                   modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                   contentScale = ContentScale.FillWidth
+               )
+               Spacer(modifier = Modifier.width(20.dp))
+
+               Column {
+                   Text(
+                       text = "Men's Shirt",
+                       fontSize = 20.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+
+
+                   )
+                   Text(
+                       text = "Casual Wear",
+                       fontSize = 15.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+                   )
+                   Text(
+                       text = "Ksh.1500",
+                       fontSize = 15.sp,
+                       textDecoration = TextDecoration.LineThrough
+
+                   )
+                   Text(
+                       text = "Price : Ksh.1200",
+                       fontSize = 15.sp,
+
+
+                       )
+                   Row {
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                   }
+                   Button(
+                       onClick = {
+                           val callIntent= Intent(Intent.ACTION_DIAL)
+                           callIntent.data="tel:0716959730".toUri()
+
+                           mContext.startActivity(callIntent)
+                       },
+                       colors = ButtonDefaults.buttonColors(Color.DarkGray),
+                       shape = RoundedCornerShape(size = 10.dp)
+                   ) {
+                       Text(
+                           text = "Contact Us",
+                           color = Color.Green
+                       )
+                   }
+
+
+
+
+
+               }
+
+
+           }
+           //End of row
+           Spacer(modifier = Modifier.height(10.dp))
+           //Row
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
+
+               Image(
+                   painter = painterResource(R.drawable.hr),
+                   contentDescription = "home",
+                   modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                   contentScale = ContentScale.FillWidth
+               )
+               Spacer(modifier = Modifier.width(20.dp))
+
+               Column {
+                   Text(
+                       text = "Men's Shirt",
+                       fontSize = 20.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+
+
+                   )
+                   Text(
+                       text = "Casual Wear",
+                       fontSize = 15.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+                   )
+                   Text(
+                       text = "Ksh.4500",
+                       fontSize = 15.sp,
+                       textDecoration = TextDecoration.LineThrough
+
+                   )
+                   Text(
+                       text = "Price : Ksh.2000",
+                       fontSize = 15.sp,
+
+
+                       )
+                   Row {
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                   }
+                   Button(
+                       onClick = {
+                           val callIntent= Intent(Intent.ACTION_DIAL)
+                           callIntent.data="tel:0716959730".toUri()
+
+                           mContext.startActivity(callIntent)
+                       },
+                       colors = ButtonDefaults.buttonColors(Color.DarkGray),
+                       shape = RoundedCornerShape(size = 10.dp)
+                   ) {
+                       Text(
+                           text = "Contact Us",
+                           color = Color.Green
+                       )
+                   }
+
+
+
+
+
+               }
+
+
+           }
+           //End of row
+           Spacer(modifier = Modifier.height(10.dp))
+           //Row
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
+
+               Image(
+                   painter = painterResource(R.drawable.mm),
+                   contentDescription = "home",
+                   modifier = Modifier.width(200.dp).height(150.dp).clip(shape = RoundedCornerShape(10.dp)),
+                   contentScale = ContentScale.FillWidth
+               )
+               Spacer(modifier = Modifier.width(20.dp))
+
+               Column {
+                   Text(
+                       text = "Men's Shirt",
+                       fontSize = 20.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+
+
+                   )
+                   Text(
+                       text = "Casual Wear",
+                       fontSize = 15.sp,
+                       fontWeight = FontWeight.ExtraBold
+
+                   )
+                   Text(
+                       text = "Ksh.2000",
+                       fontSize = 15.sp,
+                       textDecoration = TextDecoration.LineThrough
+
+                   )
+                   Text(
+                       text = "Price : Ksh.1900",
+                       fontSize = 15.sp,
+
+
+                       )
+                   Row {
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =  Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint =Color.Magenta)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.Magenta)
+                   }
+                   Button(
+                       onClick = {
+                           val callIntent= Intent(Intent.ACTION_DIAL)
+                           callIntent.data="tel:0716959730".toUri()
+
+                           mContext.startActivity(callIntent)
+                       },
+                       colors = ButtonDefaults.buttonColors(Color.DarkGray),
+                       shape = RoundedCornerShape(size = 10.dp)
+                   ) {
+                       Text(
+                           text = "Contact Us",
+                           color = Color.Green
+                       )
+                   }
+
+
+
+
+
+               }
+
+
+           }
+           //End of row
+
+
+
+
+
+       }
 
 
 

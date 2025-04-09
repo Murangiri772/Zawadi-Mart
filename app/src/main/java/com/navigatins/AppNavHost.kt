@@ -11,6 +11,7 @@ import com.lewishr.zawadimart.ui.screens.dashboard.DashBoardScreen
 import com.lewishr.zawadimart.ui.screens.home.HomeScreen
 import com.lewishr.zawadimart.ui.screens.intents.IntentsScreen
 import com.lewishr.zawadimart.ui.screens.item.ItemScreen
+import com.lewishr.zawadimart.ui.screens.service.ServiceScreen
 import com.lewishr.zawadimart.ui.screens.start.StartScreen
 
 
@@ -18,7 +19,7 @@ import com.lewishr.zawadimart.ui.screens.start.StartScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_HOME
+    startDestination: String = ROUT_DASHBOARD
 ) {
 
     NavHost(
@@ -47,6 +48,10 @@ fun AppNavHost(
         }
         composable(ROUT_DASHBOARD) {
             DashBoardScreen(navController)
+
+        }
+        composable(ROUT_SERVICE) {
+            ServiceScreen(navController)
 
         }
 

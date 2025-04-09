@@ -2,6 +2,7 @@ package com.lewishr.zawadimart.ui.screens.dashboard
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -37,6 +38,11 @@ import com.lewishr.zawadimart.R
 import com.lewishr.zawadimart.ui.theme.neworange
 import com.lewishr.zawadimart.ui.theme.newwhite
 import com.lewishr.zawadimart.ui.theme.newyellow
+import com.navigatins.ROUT_ABOUT
+import com.navigatins.ROUT_HOME
+import com.navigatins.ROUT_INTENTS
+import com.navigatins.ROUT_ITEM
+import com.navigatins.ROUT_START
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -111,7 +117,8 @@ fun DashBoardScreen(navController: NavController){
         ){
             //Card1
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_HOME)}
+
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -135,7 +142,8 @@ fun DashBoardScreen(navController: NavController){
             Spacer(modifier = Modifier.width(20.dp))
             //Card2
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_INTENTS)}
+
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -145,13 +153,13 @@ fun DashBoardScreen(navController: NavController){
 
                 ){
                     Image(
-                        painter = painterResource(R.drawable.ab),
+                        painter = painterResource(R.drawable.gm),
                         contentDescription = "home",
                         alignment = Alignment.Center,
                         modifier = Modifier.fillMaxWidth(),
                     )
 
-                    Text(text = "About", fontSize = 15.sp)
+                    Text(text = "Intents", fontSize = 15.sp)
                 }
 
             }
@@ -164,7 +172,8 @@ fun DashBoardScreen(navController: NavController){
         ){
             //Card3
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_START)}
+
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -188,7 +197,7 @@ fun DashBoardScreen(navController: NavController){
             Spacer(modifier = Modifier.width(20.dp))
             //Card4
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_ITEM)}
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -204,11 +213,12 @@ fun DashBoardScreen(navController: NavController){
                         modifier = Modifier.fillMaxWidth(),
                     )
 
-                    Text(text = "Items", fontSize = 15.sp)
+                    Text(text = "Product", fontSize = 15.sp)
                 }
 
             }
             //card4
+
 
         }
         //END OF ROW2
@@ -223,6 +233,58 @@ fun DashBoardScreen(navController: NavController){
 
 
         //END OF ROW
+
+    Row (
+        modifier = Modifier.padding(20.dp)
+    ){
+        //Card5
+        Card (
+            modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_ABOUT)}
+        ){
+            Column (
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+
+
+            ){
+                Image(
+                    painter = painterResource(R.drawable.ab),
+                    contentDescription = "home",
+                    alignment = Alignment.Center,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+
+                Text(text = "About", fontSize = 15.sp)
+            }
+
+        }
+        //card5
+        Spacer(modifier = Modifier.width(20.dp))
+        //Card6
+        Card (
+            modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_ABOUT)}
+        ){
+            Column (
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+
+
+            ){
+                Image(
+                    painter = painterResource(R.drawable.ab),
+                    contentDescription = "home",
+                    alignment = Alignment.Center,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+
+                Text(text = "About", fontSize = 15.sp)
+            }
+
+        }
+        //card6
+    }
 
 
 
