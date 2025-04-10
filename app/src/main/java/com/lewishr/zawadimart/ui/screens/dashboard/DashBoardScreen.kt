@@ -42,6 +42,7 @@ import com.navigatins.ROUT_ABOUT
 import com.navigatins.ROUT_HOME
 import com.navigatins.ROUT_INTENTS
 import com.navigatins.ROUT_ITEM
+import com.navigatins.ROUT_SERVICE
 import com.navigatins.ROUT_START
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -172,7 +173,9 @@ fun DashBoardScreen(navController: NavController){
         ){
             //Card3
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_START)}
+                modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(
+                    ROUT_SERVICE
+                )}
 
             ){
                 Column (
@@ -189,7 +192,7 @@ fun DashBoardScreen(navController: NavController){
                         modifier = Modifier.fillMaxWidth(),
                     )
 
-                    Text(text = "Start", fontSize = 15.sp)
+                    Text(text = "Services", fontSize = 15.sp)
                 }
 
             }
@@ -232,64 +235,18 @@ fun DashBoardScreen(navController: NavController){
 
 
 
-        //END OF ROW
-
-    Row (
-        modifier = Modifier.padding(20.dp)
-    ){
-        //Card5
-        Card (
-            modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_ABOUT)}
-        ){
-            Column (
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
 
 
-            ){
-                Image(
-                    painter = painterResource(R.drawable.ab),
-                    contentDescription = "home",
-                    alignment = Alignment.Center,
-                    modifier = Modifier.fillMaxWidth(),
-                )
-
-                Text(text = "About", fontSize = 15.sp)
-            }
-
-        }
-        //card5
-        Spacer(modifier = Modifier.width(20.dp))
-        //Card6
-        Card (
-            modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_ABOUT)}
-        ){
-            Column (
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
 
 
-            ){
-                Image(
-                    painter = painterResource(R.drawable.ab),
-                    contentDescription = "home",
-                    alignment = Alignment.Center,
-                    modifier = Modifier.fillMaxWidth(),
-                )
 
-                Text(text = "About", fontSize = 15.sp)
-            }
 
-        }
-        //card6
     }
 
 
 
 
-}
+
 
 
 

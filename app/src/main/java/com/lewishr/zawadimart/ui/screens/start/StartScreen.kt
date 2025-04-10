@@ -34,6 +34,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.lewishr.zawadimart.R
 import com.lewishr.zawadimart.ui.theme.neworange
+import com.navigatins.ROUT_DASHBOARD
 import com.navigatins.ROUT_ITEM
 import com.navigatins.ROUT_START
 
@@ -83,7 +84,7 @@ fun StartScreen(navController: NavController){
 
         Button(
             onClick = {
-                navController.navigate(ROUT_ITEM)
+                navController.navigate(ROUT_DASHBOARD)
             },
             colors = ButtonDefaults.buttonColors(Color.Green),
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp)

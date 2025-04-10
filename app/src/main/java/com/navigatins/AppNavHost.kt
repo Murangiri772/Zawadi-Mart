@@ -12,6 +12,7 @@ import com.lewishr.zawadimart.ui.screens.home.HomeScreen
 import com.lewishr.zawadimart.ui.screens.intents.IntentsScreen
 import com.lewishr.zawadimart.ui.screens.item.ItemScreen
 import com.lewishr.zawadimart.ui.screens.service.ServiceScreen
+import com.lewishr.zawadimart.ui.screens.splash.SplashScreen
 import com.lewishr.zawadimart.ui.screens.start.StartScreen
 
 
@@ -19,7 +20,7 @@ import com.lewishr.zawadimart.ui.screens.start.StartScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_DASHBOARD
+    startDestination: String = ROUT_SPLASH
 ) {
 
     NavHost(
@@ -54,9 +55,23 @@ fun AppNavHost(
             ServiceScreen(navController)
 
         }
+        composable(ROUT_SPLASH) {
+            SplashScreen(navController)
+
+        }
+        composable(ROUT_HAMMALIA) {
+            HammaliaScreen(navController)
+
+        }
+
 
 
     }
 
 
+}
+
+@Composable
+fun HammaliaScreen(x0: NavHostController) {
+    TODO("Not yet implemented")
 }
