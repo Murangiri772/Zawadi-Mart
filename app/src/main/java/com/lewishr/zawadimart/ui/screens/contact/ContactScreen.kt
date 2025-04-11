@@ -1,5 +1,6 @@
 package com.lewishr.zawadimart.ui.screens.contact
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -52,6 +53,7 @@ fun ContactScreen(navController: NavController){
                 navigationIcon = {
                     IconButton(onClick = { /* Handle back/nav */ }) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(

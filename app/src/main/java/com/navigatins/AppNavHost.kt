@@ -8,9 +8,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.lewishr.zawadimart.ui.screens.about.AboutScreen
 import com.lewishr.zawadimart.ui.screens.dashboard.DashBoardScreen
+import com.lewishr.zawadimart.ui.screens.form.FormScreen
 import com.lewishr.zawadimart.ui.screens.home.HomeScreen
 import com.lewishr.zawadimart.ui.screens.intents.IntentsScreen
 import com.lewishr.zawadimart.ui.screens.item.ItemScreen
+import com.lewishr.zawadimart.ui.screens.login.LoginScreen
 import com.lewishr.zawadimart.ui.screens.service.ServiceScreen
 import com.lewishr.zawadimart.ui.screens.splash.SplashScreen
 import com.lewishr.zawadimart.ui.screens.start.StartScreen
@@ -63,6 +65,16 @@ fun AppNavHost(
             HammaliaScreen(navController)
 
         }
+        composable(ROUT_FORM) {
+            FormScreen(navController)
+
+        }
+        composable(ROUT_LOGIN) {
+            LoginScreen(navController)
+
+        }
+
+
 
 
 
