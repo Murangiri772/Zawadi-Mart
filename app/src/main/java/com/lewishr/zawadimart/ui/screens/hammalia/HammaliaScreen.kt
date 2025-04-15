@@ -1,6 +1,7 @@
 package com.lewishr.zawadimart.ui.screens.Hammalia
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -40,12 +42,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.lewishr.zawadimart.R
+import com.lewishr.zawadimart.ui.theme.newblue
+import com.lewishr.zawadimart.ui.theme.newbrown
 import com.lewishr.zawadimart.ui.theme.newgrey
 import com.lewishr.zawadimart.ui.theme.newwhite
 import com.lewishr.zawadimart.ui.theme.newyellow
@@ -104,16 +109,7 @@ fun HammaliaScreen(navController: NavController){
 
             }
         },
-        //FloatingActionButton
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = { /* Add action */ },
-                containerColor = newyellow
 
-            ) {
-                Icon(Icons.Default.Add, contentDescription = "Add")
-            }
-        },
 
 
         //Contents
@@ -139,7 +135,7 @@ fun HammaliaScreen(navController: NavController){
 
 
                     )
-                    Text(text = "Here are your project")
+                    Text(text = "Here are your project", fontWeight = FontWeight.Light)
                     Spacer(modifier = Modifier.height(20.dp))
                     Spacer(modifier = Modifier.height(100.dp))
                     Row (
@@ -147,24 +143,29 @@ fun HammaliaScreen(navController: NavController){
                     ){
                         //Card1
                         Card (
-                            modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_HOME)}
+                            modifier = Modifier.width(150.dp).height(180.dp)
 
                         ){
                             Column (
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize().background(newblue),
                                 horizontalAlignment = Alignment.CenterHorizontally,
                                 verticalArrangement = Arrangement.Center
 
 
                             ){
                                 Image(
-                                    painter = painterResource(R.drawable.hm),
-                                    contentDescription = "home",
+                                    painter = painterResource(R.drawable.cy),
+                                    contentDescription = "",
                                     alignment = Alignment.Center,
                                     modifier = Modifier.fillMaxWidth(),
                                 )
 
-                                Text(text = "Home", fontSize = 15.sp)
+                                Text(text = "CryptoCurrency",
+                                    fontSize = 15.sp,
+                                    color = newwhite)
+                                Text(text = "Landing Page",
+                                    fontSize = 15.sp,
+                                    color = newwhite)
                             }
 
                         }
@@ -172,86 +173,161 @@ fun HammaliaScreen(navController: NavController){
                         Spacer(modifier = Modifier.width(20.dp))
                         //Card2
                         Card (
-                            modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_INTENTS)}
+                            modifier = Modifier.width(150.dp).height(180.dp)
 
                         ){
                             Column (
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize().background(newbrown),
                                 horizontalAlignment = Alignment.CenterHorizontally,
                                 verticalArrangement = Arrangement.Center
 
 
                             ){
                                 Image(
-                                    painter = painterResource(R.drawable.gm),
-                                    contentDescription = "home",
+                                    painter = painterResource(R.drawable.std),
+                                    contentDescription = "",
                                     alignment = Alignment.Center,
                                     modifier = Modifier.fillMaxWidth(),
                                 )
 
-                                Text(text = "Intents", fontSize = 15.sp)
+                                Text(text = "Statistics",
+                                    fontSize = 15.sp,
+                                    color = newwhite)
+                                Text(text = "DashBoard",
+                                    fontSize = 15.sp,
+                                    color = newwhite
+                                )
                             }
 
                         }
                         //card2
-                        Spacer(modifier = Modifier.height(100.dp))
+                        Spacer(modifier = Modifier.width(20.dp))
 
 
                             //Card1
                             Card (
-                                modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_HOME)}
-
+                                modifier = Modifier.width(150.dp).height(180.dp)
                             ){
                                 Column (
-                                    modifier = Modifier.fillMaxSize(),
+                                    modifier = Modifier.fillMaxSize().background(newgrey),
                                     horizontalAlignment = Alignment.CenterHorizontally,
                                     verticalArrangement = Arrangement.Center
 
 
                                 ){
-                                    Image(
-                                        painter = painterResource(R.drawable.hm),
-                                        contentDescription = "home",
-                                        alignment = Alignment.Center,
-                                        modifier = Modifier.fillMaxWidth(),
-                                    )
 
-                                    Text(text = "Home", fontSize = 15.sp)
+
+                                    Text(text = "CryptoCurrency",
+                                        fontSize = 15.sp,
+                                        color = newwhite)
+                                    Text(text = "Landing Page",
+                                        fontSize = 15.sp,
+                                        color = newwhite)
+                                    Spacer(modifier = Modifier.height(10.dp))
+                                    Row (
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ){
+                                        Image(
+                                            painter = painterResource(R.drawable.ps),
+                                            contentDescription = "",
+                                            alignment = Alignment.Center,
+
+                                            )
+                                        Spacer(modifier = Modifier.width(20.dp))
+                                        Text(
+                                            text = "Samantha"
+                                        )
+                                        Spacer(modifier = Modifier.height(10.dp))
+
+                                    }
+
                                 }
 
                             }
-                            //card1
-                            Spacer(modifier = Modifier.width(20.dp))
-                            //Card2
-                            Card (
-                                modifier = Modifier.width(150.dp).height(180.dp).clickable{navController.navigate(ROUT_INTENTS)}
-
-                            ){
-                                Column (
-                                    modifier = Modifier.fillMaxSize(),
-                                    horizontalAlignment = Alignment.CenterHorizontally,
-                                    verticalArrangement = Arrangement.Center
-
-
-                                ){
-                                    Image(
-                                        painter = painterResource(R.drawable.gm),
-                                        contentDescription = "home",
-                                        alignment = Alignment.Center,
-                                        modifier = Modifier.fillMaxWidth(),
-                                    )
-
-                                    Text(text = "Intents", fontSize = 15.sp)
-                                }
-
-                            }
-                            //card2
 
                     }
 
 
 
                 }
+                Spacer(modifier = Modifier.height(20.dp))
+               Column (
+                   modifier = Modifier.padding(20.dp)
+               ){
+                   Text(text = "Personal Tasks",
+                       fontWeight = FontWeight.Bold,
+                       fontSize = 20.sp,
+                   )
+               }
+                Spacer(modifier = Modifier.height(20.dp))
+                Row (
+                    modifier = Modifier.padding(20.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ){
+                    Card (
+                        modifier = Modifier.fillMaxWidth().size(100.dp)
+                    ){
+                        Column (
+                            modifier = Modifier.fillMaxWidth().padding(start = 10.dp),
+                            verticalArrangement = Arrangement.Center
+                        ){
+                            Image(
+                                painter = painterResource(R.drawable.ps),
+                                contentDescription = "",
+                                alignment = Alignment.Center,
+
+                                )
+                            Spacer(modifier = Modifier.width(10.dp))
+                            Row (verticalAlignment = Alignment.CenterVertically){
+                                Text(text = "NDA Review for website project")
+
+
+                            }
+                            Row (verticalAlignment = Alignment.CenterVertically){
+                                Text(text = "Today _ 10pm")
+                            }
+                        }
+
+                    }
+
+                }
+                Row (
+                    modifier = Modifier.padding(20.dp)
+                ){
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Card (
+                        modifier = Modifier.fillMaxWidth().size(100.dp)
+                    ){
+                        Column (
+                            modifier = Modifier.fillMaxWidth().padding(start = 10.dp),
+                            verticalArrangement = Arrangement.Center
+                        ){
+                            Image(
+                                painter = painterResource(R.drawable.ps),
+                                contentDescription = "",
+                                alignment = Alignment.Center,
+
+                                )
+                            Spacer(modifier = Modifier.width(10.dp))
+                            Row(
+                                horizontalArrangement = Arrangement.Center
+                            ) {
+                                Text(text = "Email Reply for Green Project ")
+
+                            }
+                            Row (verticalAlignment = Alignment.CenterVertically,
+
+                            )
+                            { Text(text = "Today _ 10pm") }
+
+                        }
+
+                    }
+
+                }
+
+
 
 
 
