@@ -22,6 +22,7 @@ import com.lewishr.zawadimart.R
 import com.lewishr.zawadimart.ui.theme.newgrey
 import com.lewishr.zawadimart.ui.theme.neworange
 import com.lewishr.zawadimart.ui.theme.newpine
+import com.navigatins.ROUT_LOGIN
 import com.navigatins.ROUT_START
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -34,7 +35,7 @@ fun SplashScreen(navController: NavController){
     var coroutine = rememberCoroutineScope()
     coroutine.launch {
         delay(2000)
-        navController.navigate(ROUT_START)
+        navController.navigate(ROUT_LOGIN)
     }
 
 

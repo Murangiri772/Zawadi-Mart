@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 
 import androidx.compose.material3.Button
@@ -18,9 +19,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 
 import androidx.compose.ui.text.font.FontFamily
@@ -41,38 +44,11 @@ import com.navigatins.ROUT_START
 fun HomeScreen(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize()
+            .paint(painter = painterResource(R.drawable.bc), contentScale = ContentScale.FillBounds)
     ) {
 
-        Text(
-            text = "ZawadiMart",
-            fontSize = 30.sp,
-            color = Color.Magenta,
-            fontWeight = FontWeight.ExtraBold,
-            fontFamily = FontFamily.SansSerif,
-            textDecoration = TextDecoration.Underline
-        )
-        Text(
-            text = "Welcom to my Ecommerce app",
-            fontSize = 18.sp,
-            fontStyle = FontStyle.Italic
-
-        )
-        Image(
-            painter = painterResource(R.drawable.img),
-            contentDescription = "home",
-            alignment = Alignment.Center,
-            modifier = Modifier.fillMaxWidth(),
-
-        )
-        Button(
-            onClick = {
-                navController.navigate(ROUT_START)
-            },
-            colors = ButtonDefaults.buttonColors(Color.Green),
 
 
-            ) {
-            Text(text = "Add to cut")
 
 
         }
@@ -82,12 +58,12 @@ fun HomeScreen(navController: NavController){
                 .fillMaxHeight()
                 .clip(RoundedCornerShape(10.dp))
                 .shadow(20.dp)
-                .background(newyellow)
+
         ){
             Box (
                 modifier = Modifier
                     .fillMaxHeight()
-                    .background(newyellow),
+                   ,
                 contentAlignment = Alignment.Center
             ){
                 Text(
@@ -97,8 +73,25 @@ fun HomeScreen(navController: NavController){
                     fontSize = 70.sp,
                     modifier = Modifier
                         .rotate(-90f)
-                        .background(newyellow)
+
                 )
+
+
+            }
+            Box (
+                modifier = Modifier.fillMaxHeight().padding(start = 80.dp, end = 80.dp),
+                contentAlignment = Alignment.BottomCenter
+
+            ){
+                Button(
+                    onClick = {
+                        navController.navigate(ROUT_START)
+                    },
+                    colors = ButtonDefaults.buttonColors(Color.Green),
+
+
+                    ) {
+                    Text(text = "Add to cut")
             }
         }
 
